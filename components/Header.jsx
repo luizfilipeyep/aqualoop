@@ -25,7 +25,7 @@ export default function Header() {
           <Text style={styles.headerText}>{saudacaoPorhora()}, {"\n"}<Text style={styles.headerTextSpan}>Luiz</Text></Text>
         </View>
         <View>
-          <Bell width={33} height={33} fill="#D9D9D9" />
+          <Bell width={30} height={30} fill="#D9D9D9" />
         </View>
       </View>
     </View>

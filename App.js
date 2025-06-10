@@ -40,13 +40,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "90%",
-    height: 50,
+    height: 40,
     borderRadius: 25,
     backgroundColor: "#D5E9F4",
     marginVertical: 10
   },
   buttonHighText: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: "bold",
     color: "#4A96D0"
   },

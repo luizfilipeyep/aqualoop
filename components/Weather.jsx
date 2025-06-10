@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 function Weather() {
   return ( 
     <TouchableOpacity style={styles.container}>
-
+      
     </TouchableOpacity>
    );
 }
