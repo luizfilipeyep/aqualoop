@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
 
+import Vector1 from "../assets/waves.svg"
+
 function Waves() {
   return ( 
     <View style={styles.container}>
-
+      <Vector1 width="100%" />
     </View>
    );
 }

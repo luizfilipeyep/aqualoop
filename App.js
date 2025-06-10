@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import Waves from "./components/Waves"
 import Header from './components/Header';
+import SystemButton from './components/SystemButton';
+import Humidity from './components/Humidity';
+import Weather from './components/Weather';
 
 export default function App() {
   return (
@@ -13,6 +16,12 @@ export default function App() {
       <TouchableOpacity style={styles.buttonHigh}>
         <Text style={styles.buttonHighText}>Mais informações: Clima, Histórico...</Text>
       </TouchableOpacity>
+
+      <View style={styles.buttonContainer}>
+        <SystemButton />
+        <Humidity />
+        <Weather />
+      </View>
 
       <StatusBar style="auto" />
     </View>
@@ -40,5 +49,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
     color: "#4A96D0"
+  },
+  buttonContainer: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 5
   }
 });
