@@ -1,11 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StatusBar } from "expo-status-bar"
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native"
+import { LinearGradient } from "expo-linear-gradient"
+
 
 import Waves from "./components/Waves"
-import Header from './components/Header';
-import SystemButton from './components/SystemButton';
-import Humidity from './components/Humidity';
-import Weather from './components/Weather';
+import Header from "./components/Header"
+import SystemButton from "./components/SystemButton"
+import Humidity from "./components/Humidity"
+import Weather from "./components/Weather"
 
 export default function App() {
   return (
@@ -17,23 +19,26 @@ export default function App() {
         <Text style={styles.buttonHighText}>Mais informações: Clima, Histórico...</Text>
       </TouchableOpacity>
 
-      <View style={styles.buttonContainer}>
+      <LinearGradient
+        colors={["#FFFFFF", "#73C2FE", "#49A2FE" , "#FFFFFF"]}
+        style={styles.buttonContainer}
+      >
         <SystemButton />
         <Humidity />
         <Weather />
-      </View>
+      </LinearGradient>
 
       <StatusBar style="auto" />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 30,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
   },
   buttonHigh: {
     display: "flex",
@@ -53,6 +58,8 @@ const styles = StyleSheet.create({
   buttonContainer: {
     display: "flex",
     flexDirection: "row",
-    gap: 5
+    justifyContent: "center",
+    gap: 5,
+    width: "100%"
   }
-});
+})
