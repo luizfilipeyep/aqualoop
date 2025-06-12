@@ -1,13 +1,17 @@
 import { StatusBar } from "expo-status-bar"
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
-
+import { Calendar, LocaleConfig } from "react-native-calendars"
+import { ptBR } from "./utils/localeCalendarConfig"
 
 import Waves from "./components/Waves"
 import Header from "./components/Header"
 import SystemButton from "./components/SystemButton"
 import Humidity from "./components/Humidity"
 import Weather from "./components/Weather"
+
+LocaleConfig.locales["pt-br"] = ptBR
+LocaleConfig.defaultLocale = "pt-br"
 
 export default function App() {
   return (
@@ -27,6 +31,14 @@ export default function App() {
         <Humidity />
         <Weather />
       </LinearGradient>
+
+      <Calendar
+        style={styles.calendar}
+        theme={{
+          todayBackgroundColor: "#FF9E9E",
+          todayTextColor: "#FFFFFF"
+        }}
+      />
 
       <StatusBar style="auto" />
     </View>
@@ -61,5 +73,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 5,
     width: "100%"
+  },
+  calendar: {
+    width: 400,
+    marginTop: 10
   }
 })
