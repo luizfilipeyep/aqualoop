@@ -2,13 +2,14 @@ import { StatusBar } from "expo-status-bar"
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { Calendar, LocaleConfig } from "react-native-calendars"
-import { ptBR } from "./utils/localeCalendarConfig"
+import { ptBR } from "../utils/localeCalendarConfig"
+import { Link } from "expo-router"
 
-import Waves from "./components/Waves"
-import Header from "./components/Header"
-import SystemButton from "./components/SystemButton"
-import Humidity from "./components/Humidity"
-import Weather from "./components/Weather"
+import Waves from "../components/Waves"
+import Header from "../components/Header"
+import SystemButton from "../components/SystemButton"
+import Humidity from "../components/Humidity"
+import Weather from "../components/Weather"
 
 LocaleConfig.locales["pt-br"] = ptBR
 LocaleConfig.defaultLocale = "pt-br"
@@ -19,9 +20,11 @@ export default function App() {
       <Header />
       <Waves />
 
-      <TouchableOpacity style={styles.buttonHigh}>
-        <Text style={styles.buttonHighText}>Mais informações: Clima, Histórico...</Text>
-      </TouchableOpacity>
+      <Link href={"/data"} asChild>
+        <TouchableOpacity style={styles.buttonHigh}>
+          <Text style={styles.buttonHighText}>Mais informações: Clima, Histórico...</Text>
+        </TouchableOpacity>
+      </Link>
 
       <LinearGradient
         colors={["#FFFFFF", "#73C2FE", "#49A2FE" , "#FFFFFF"]}
