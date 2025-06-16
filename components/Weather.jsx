@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 import CloudIcon from "../assets/cloud.svg"
 
@@ -6,11 +6,11 @@ function Weather() {
   const temperature = 24
 
   return ( 
-    <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.mainText}>{temperature}º</Text>
       <CloudIcon style={styles.icon} />
       <Text style={styles.title}>Clima</Text>
-    </TouchableOpacity>
+    </View>
    );
 }
 

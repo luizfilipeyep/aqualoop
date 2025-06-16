@@ -4,11 +4,11 @@ function Humidity() {
   const umidade = 4
 
   return ( 
-    <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.secondText}><Text style={styles.mainText}>{umidade}</Text>mm</Text>
 
       <Text style={styles.title}>Umidade do Solo</Text>
-    </TouchableOpacity>
+    </View>
    );
 }
 

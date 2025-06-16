@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { useState } from 'react'
+import { Link } from 'expo-router'
 
 import Bell from "../assets/icons/bell.svg"
 
@@ -25,7 +26,11 @@ export default function Header() {
           <Text style={styles.headerText}>{saudacaoPorhora()}, {"\n"}<Text style={styles.headerTextSpan}>Luiz</Text></Text>
         </View>
         <View>
-          <Bell width={30} height={30} fill="#D9D9D9" />
+          <Link href={"/notifications"} asChild>
+            <TouchableOpacity>
+              <Bell width={30} height={30} fill="#D9D9D9" />
+            </TouchableOpacity>
+          </Link>
         </View>
       </View>
     </View>
