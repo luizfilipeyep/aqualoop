@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 function SystemButton() {
   return ( 
     <TouchableOpacity style={styles.container}>
-      <Text style={styles.title}>Clima</Text>
+      <Text style={styles.title}>Sistema de Irrigação</Text>
     </TouchableOpacity>
    );
 }

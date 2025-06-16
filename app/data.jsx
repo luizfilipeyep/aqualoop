@@ -7,6 +7,7 @@ import { Link } from "expo-router"
 import Chart from "../components/Chart"
 import CalendarComp from "../components/CalendarComp"
 import Weather from "../components/Weather"
+import Forecast from "../components/Forecast"
 
 
 function Data() {
@@ -22,8 +23,9 @@ function Data() {
 
       <Chart />
 
-      <View>
+      <View style={styles.weatherContainer}>
         <Weather />
+        <Forecast />
       </View>
 
       <CalendarComp />
@@ -50,6 +52,11 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25
+  },
+  weatherContainer: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 10
   }
 })
 

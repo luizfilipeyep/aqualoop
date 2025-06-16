@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   calendar: {
-    width: 400,
+    width: 380,
     marginTop: 10,
     borderRadius: 10
   }

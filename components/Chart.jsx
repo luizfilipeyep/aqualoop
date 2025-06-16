@@ -4,10 +4,10 @@ import {Svg, Path, LinearGradient, Defs, Stop } from "react-native-svg"
 import * as d3 from "d3"
 
 function Chart() {
-  const data = [100, 200, 187, 400, 52, 310, 250]
+  const data = [64, 80, 75, 77, 82, 80, 71]
 
   const [width, setWidth] = useState(0)
-  const height = 200
+  const height = 180
 
   const min = Math.min(...data)
   const max = Math.max(...data)
@@ -54,7 +54,7 @@ function Chart() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "90%",
     height: "auto",
     paddingTop: 10,
     paddingBottom: 10,
