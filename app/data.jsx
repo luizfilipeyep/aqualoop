@@ -4,6 +4,10 @@ import BackIcon from "../assets/icons/chevron-left.svg"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { Link } from "expo-router"
 
+import Chart from "../components/Chart"
+import CalendarComp from "../components/CalendarComp"
+import Weather from "../components/Weather"
+
 
 function Data() {
   return ( 
@@ -16,6 +20,13 @@ function Data() {
         </Link>
       </View>
 
+      <Chart />
+
+      <View>
+        <Weather />
+      </View>
+
+      <CalendarComp />
       <StatusBar style={{backgroundColor: "#D5E9F4"}} />      
     </SafeAreaView> 
    );
@@ -28,16 +39,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   backButtonSection: {
-    width: "90%"
+    width: "100%",
+    marginTop: 0,
+    marginLeft: 0
   },
   backButton: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: 40,
-    height: 40,
-    borderRadius: 25,
-    backgroundColor: "#FFFFFF"
+    width: 50,
+    height: 50,
+    borderRadius: 25
   }
 })
 
