@@ -5,7 +5,7 @@ function Humidity() {
 
   return ( 
     <View style={styles.container}>
-      <Text style={styles.secondText}><Text style={styles.mainText}>{umidade}</Text>mm</Text>
+      <Text style={styles.secondText}><Text style={styles.mainText}>{umidade}</Text>%</Text>
 
       <Text style={styles.title}>Umidade do Solo</Text>
     </View>
