@@ -21,7 +21,6 @@ function Data() {
 
       <View style={styles.weatherContainer}>
         <Weather />
-        <Forecast />
       </View>
 
       <CalendarComp />

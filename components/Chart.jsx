@@ -1,13 +1,15 @@
-import { Text, View, StyleSheet } from "react-native"
+import { View, StyleSheet } from "react-native"
 import { useState } from "react"
-import {Svg, Path, LinearGradient, Defs, Stop } from "react-native-svg"
+import {Svg, Path, LinearGradient, Defs, Stop, Text } from "react-native-svg"
 import * as d3 from "d3"
 
 function Chart() {
   const data = [64, 80, 75, 77, 82, 80, 71]
+  const labels = ["13", "14", "15", "16", "17", "18", "19"]
 
   const [width, setWidth] = useState(0)
-  const height = 180
+  const height = 200
+
 
   const min = Math.min(...data)
   const max = Math.max(...data)
@@ -27,8 +29,22 @@ function Chart() {
                         .x((d, i) => xScale(i))
                         .curve(d3.curveCardinal.tension(0))
   const svgArea = areaFn(data)
-  
 
+  const labelPosition = xScale.ticks()
+  
+  console.log(labelPosition[0]);
+
+  const xTicks = data.map((_, i) => ({
+    index: i,
+    x: xScale(i)
+  }));
+
+  const yTicks = yScale.ticks(5).map(value => ({
+  value,
+  y: yScale(value)
+  }));
+  
+  
   return ( 
     <View
       style={styles.container}
@@ -37,6 +53,7 @@ function Chart() {
       <Svg 
         width={width} 
         height={height}
+        viewBox={`-13 0 ${width+20} ${height -20}`}
       >
         <Defs>
           <LinearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -47,7 +64,34 @@ function Chart() {
 
         <Path d={svgLine} stroke="#49A2FE" fill="none" strokeWidth={4} />
         <Path d={svgArea} stroke="none" fill="url(#gradient)" />
+         {/* Rótulos do eixo X usando os valores do data */}
+          {labels.map((value, index) => (
+            <Text
+              key={index}
+              x={xScale(index)}
+              y={200-12} // abaixo da área do gráfico
+              fontSize={12}
+              fill="black"
+              textAnchor="middle"
+            >
+              {value}
+            </Text>
+          ))}
+        {yTicks.map(tick => (
+  <Text
+    key={tick.value}
+    x={0}
+    y={tick.y}
+    fontSize={12}
+    fill="gray"
+    textAnchor="start"
+  >
+    {tick.value}
+  </Text>
+))}
       </Svg>
+      
+      
     </View>
    );
 }
@@ -58,6 +102,9 @@ const styles = StyleSheet.create({
     height: "auto",
     paddingTop: 10,
     paddingBottom: 10,
+    marginBottom: 10,
+    borderRadius: 15,
+    backgroundColor: "white"
   }
 })
 

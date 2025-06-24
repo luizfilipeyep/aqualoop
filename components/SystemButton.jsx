@@ -1,20 +1,26 @@
 import { StyleSheet, Text, View, Pressable, TouchableOpacity } from 'react-native'
 import axios from 'axios'
 import { useState } from 'react'
+import GotaIcon from "../assets/gota.svg"
+
 
 function SystemButton() {
   const [systemStatus, setSystemStatus] = useState("desligado")
   const [buttonStyle, setButtonStyle] = useState(styles.container)
   const [buttonStyleText, setButtonStyleText] = useState(styles.title)
-  const url = "172.20.10.10"
+  const ip = "172.20.10.10"
 
   const handleClickSystem = () => {
     var msg = null
 
     if (systemStatus == "desligado") {
-      axios.put(`http://${url}/bomba1`, {
-        acao: true
+      fetch(`http://${ip}/bomba1`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `acao=1`
       })
+      .then(response => console.log(response))
+      .catch(err => console.log("Erro ao enviar comando"))
 
       setSystemStatus("ligado")
       setButtonStyle(styles.containerActive)
@@ -22,9 +28,15 @@ function SystemButton() {
       msg = "A bomba 1 foi ligada"
     } 
     else if (systemStatus == "ligado") {
-      axios.put(`http://${url}/bomba1`, {
-        acao: false
+      axios
+        fetch(`http://${ip}/bomba1`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `acao=0`
       })
+      .then(response => console.log(response)
+      )
+      .catch(err => console.log("Erro ao enviar comando"))
 
       setSystemStatus("desligado")
       setButtonStyle(styles.container)
@@ -37,6 +49,7 @@ function SystemButton() {
 
   return ( 
     <Pressable style={buttonStyle} onPress={handleClickSystem}>
+      <GotaIcon style={styles.icon} />
       <Text style={buttonStyleText}>Sistema de Irrigação</Text>
     </Pressable>
    );

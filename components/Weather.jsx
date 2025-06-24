@@ -1,9 +1,23 @@
 import { StyleSheet, Text, View } from 'react-native'
+import { useEffect, useState } from 'react'
 
 import CloudIcon from "../assets/cloud.svg"
 
 function Weather() {
-  const temperature = 24
+
+  const ip = "172.20.10.10"
+  const [temperatura, setTemperatura] = useState([])
+
+  useEffect(() => {
+    fetch(`http://${ip}/status`)
+        .then(res => res.json())
+        .then(data => {
+          setTemperatura(data)
+          console.log(data);          
+        })
+  }, [])
+
+  const temperature = temperatura.temperatura
 
   return ( 
     <View style={styles.container}>

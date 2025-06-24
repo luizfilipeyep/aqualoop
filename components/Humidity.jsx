@@ -1,7 +1,20 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { useEffect, useState } from 'react'
 
 function Humidity() {
-  const umidade = 4
+  const ip = "172.20.10.10"
+  const [umidadeSolo, setUmidadeSolo] = useState([])
+
+  useEffect(() => {
+    fetch(`http://${ip}/status`)
+        .then(res => res.json())
+        .then(data => {
+          setUmidadeSolo(data)
+          console.log(data);          
+        })
+  }, [])
+
+  const umidade = umidadeSolo.umidadeSolo
 
   return ( 
     <View style={styles.container}>
