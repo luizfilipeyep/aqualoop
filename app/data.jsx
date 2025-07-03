@@ -1,8 +1,12 @@
+// Página de dados
+
+// Import de bibliotecas
 import { StatusBar } from "expo-status-bar"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { Link } from "expo-router"
 
+// Import de components
 import Chart from "../components/Chart"
 import CalendarComp from "../components/CalendarComp"
 import Weather from "../components/Weather"

@@ -1,3 +1,5 @@
+// Botão de voltar para página inicial
+
 import { Link } from "expo-router"
 import { TouchableOpacity, StyleSheet } from "react-native"
 import BackIcon from "../assets/icons/chevron-left.svg"

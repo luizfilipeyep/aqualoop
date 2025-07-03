@@ -5,10 +5,11 @@ import CloudIcon from "../assets/cloud.svg"
 
 function Weather() {
 
-  const ip = "172.20.10.10"
-  const [temperatura, setTemperatura] = useState([])
+  const ip = "172.20.10.10" // endereço da api
+  const [temperatura, setTemperatura] = useState([]) // guarda os dados consumidos da api
 
   useEffect(() => {
+    // consome a api
     fetch(`http://${ip}/status`)
         .then(res => res.json())
         .then(data => {
@@ -21,7 +22,7 @@ function Weather() {
 
   return ( 
     <View style={styles.container}>
-      <Text style={styles.mainText}>{temperature}º</Text>
+      <Text style={styles.mainText}>24º</Text>
       <CloudIcon style={styles.icon} />
       <Text style={styles.title}>Clima</Text>
     </View>

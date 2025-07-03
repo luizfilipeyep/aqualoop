@@ -5,14 +5,15 @@ import GotaIcon from "../assets/gota.svg"
 
 
 function SystemButton() {
-  const [systemStatus, setSystemStatus] = useState("desligado")
+  const [systemStatus, setSystemStatus] = useState("desligado") // estado que define se o sistema está ligado ou desligado, inicialmente ele está desligado
   const [buttonStyle, setButtonStyle] = useState(styles.container)
   const [buttonStyleText, setButtonStyleText] = useState(styles.title)
-  const ip = "172.20.10.10"
+  const ip = "172.20.10.10" // endereço da api
 
   const handleClickSystem = () => {
-    var msg = null
+    var msg = null // mensagem de retorno
 
+    // ligar e desligar sistema
     if (systemStatus == "desligado") {
       fetch(`http://${ip}/bomba1`, {
         method: "POST",

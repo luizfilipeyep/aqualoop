@@ -1,8 +1,12 @@
+// Página inicial
+
+// Import de bibliotecas
 import { StatusBar } from "expo-status-bar"
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { Link } from "expo-router"
 
+// Import de components
 import Waves from "../components/Waves"
 import Header from "../components/Header"
 import SystemButton from "../components/SystemButton"

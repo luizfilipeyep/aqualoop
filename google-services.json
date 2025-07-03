@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856017868749",
+    "project_id": "aqualoop-77531",
+    "storage_bucket": "aqualoop-77531.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856017868749:android:7c2b2cf1208355f6a49684",
+        "android_client_info": {
+          "package_name": "com.aqualoop.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClnjNevPUjwutdoIoqrBzOvyuqAEfJqL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

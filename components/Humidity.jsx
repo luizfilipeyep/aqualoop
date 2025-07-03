@@ -2,10 +2,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { useEffect, useState } from 'react'
 
 function Humidity() {
-  const ip = "172.20.10.10"
-  const [umidadeSolo, setUmidadeSolo] = useState([])
+  const ip = "172.20.10.10" // endereço da api
+  const [umidadeSolo, setUmidadeSolo] = useState([]) // guarda os valores consumidos da api
 
   useEffect(() => {
+    // consumir api
     fetch(`http://${ip}/status`)
         .then(res => res.json())
         .then(data => {

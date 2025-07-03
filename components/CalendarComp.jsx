@@ -1,8 +1,12 @@
+// Componente de gráfico
+
+// Import de bibliotecas
 import { StyleSheet } from "react-native"
 import { Calendar, LocaleConfig } from "react-native-calendars"
 import { ptBR } from "../utils/localeCalendarConfig"
 import { View } from "react-native"
 
+// Definição de local e idioma do calendário
 LocaleConfig.locales["pt-br"] = ptBR
 LocaleConfig.defaultLocale = "pt-br"
 

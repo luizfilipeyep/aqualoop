@@ -6,6 +6,7 @@ import Bell from "../assets/icons/bell.svg"
 
 export default function Header() {
 
+  // obtém hora atual para criar uma saudação personalizada
   const saudacaoPorhora = () => {
     const hora = new Date().getHours()
 
