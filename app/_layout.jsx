@@ -1,4 +1,4 @@
-import { Stack } from 'expo-router';
+import { Slot } from 'expo-router';
 import { useEffect, useRef } from 'react';
 import * as Notifications from 'expo-notifications';
 import { registerForPushNotificationsAsync } from '../services/notifications';
@@ -32,5 +32,5 @@ export default function Layout() {
     };
   }, []);
 
-  return <Stack />;
+  return <Slot />;
 }

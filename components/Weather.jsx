@@ -22,7 +22,7 @@ function Weather() {
 
   return ( 
     <View style={styles.container}>
-      <Text style={styles.mainText}>24º</Text>
+      <Text style={styles.mainText}>{temperatura}</Text>
       <CloudIcon style={styles.icon} />
       <Text style={styles.title}>Clima</Text>
     </View>
